@@ -1,4 +1,20 @@
 
+// Variables
+const tokenSpace = document.getElementsByClassName("playing-grid__token-space");
+
+
+// Functions
+const onGridSquareClick = event => {
+  console.log("This function works");
+  event.target.classList.add("player-one");
+}
+
+
+// Logic
+for (let index = 0; index < tokenSpace.length; index++) {
+  tokenSpace[index].addEventListener("click", onGridSquareClick);
+}
+
 
 // Only grid squares with the class of 'allowed' are allowed to be clicked. Create an alert if not
 
