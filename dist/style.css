@@ -10,6 +10,9 @@
 .playing-grid__token-space {
   width: 40px;
   height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .playing-grid .player-one {
   background-color: red;
