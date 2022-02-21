@@ -11,3 +11,11 @@
   width: 40px;
   height: 40px;
 }
+.playing-grid .player-one {
+  background-color: red;
+  border-radius: 100%;
+}
+.playing-grid .player-two {
+  background-color: blue;
+  border-radius: 100%;
+}
