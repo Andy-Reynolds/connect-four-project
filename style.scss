@@ -1,0 +1,18 @@
+
+
+.playing-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline: auto;
+  margin-top: 40px;
+  width: 280px;
+  height: 240px;
+  border: 2px solid black;
+
+  &__token-space {
+    width: 40px;
+    height: 40px;
+  }
+
+}
+
