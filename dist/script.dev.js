@@ -57,3 +57,6 @@ for (var index = 0; index < tokenSpace.length; index++) {
 // After each allowed turn, the grid square is given class of player-one or player-two and the turn changes between player 1 and player 2
 // When an allowed grid square is clicked, the 'allowed' class is removed from that square and a new class of 'allowed' is added to the square above. Can do this by subtracting 7 from the index value of the square
 // Figure out how determine winner!
+// Create an array of winning combinations of spaces. This will be an array of arrays
+// After each turn a checkForWinner function is called
+// checkForWinner function will map through the arrays and if player-one or player-two class is in the token spaces of one of the winning arrays, then winner innerhtml is changed. Can also add confetti??
