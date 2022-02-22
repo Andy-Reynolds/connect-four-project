@@ -6,6 +6,7 @@ var tokenSpace = document.getElementsByClassName("playing-grid__token-space"); /
 var onGridSquareClick = function onGridSquareClick(event, index) {
   if (event.target.classList.contains("allowed")) {
     event.target.classList.add("player-one");
+    tokenSpace[index - 7].classList.add("allowed");
     console.log(index);
     event.target.innerHTML = index;
   } else {
@@ -13,6 +14,7 @@ var onGridSquareClick = function onGridSquareClick(event, index) {
   }
 
   ; // event.target.classList.add("player-one");
+  // tokenSpace[index-7].classList.add("player-one");
   // console.log(index);
   // event.target.innerHTML = index;
 }; // Logic
