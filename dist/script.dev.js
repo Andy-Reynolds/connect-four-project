@@ -1,16 +1,24 @@
 "use strict";
 
 // Variables
-var tokenSpace = document.getElementsByClassName("playing-grid__token-space"); // // Functions
+var tokenSpace = document.getElementsByClassName("playing-grid__token-space");
+var currentPlayer = 1; // // Functions
 
 var onGridSquareClick = function onGridSquareClick(event, index) {
   if (event.target.classList.contains("allowed")) {
-    event.target.classList.add("player-one");
-    tokenSpace[index - 7].classList.add("allowed");
-    console.log(index);
-    event.target.innerHTML = index;
+    if (currentPlayer == 1) {
+      event.target.classList.add("player-one");
+      tokenSpace[index - 7].classList.add("allowed");
+      event.target.classList.remove("allowed");
+      currentPlayer = 2;
+    } else if (currentPlayer == 2) {
+      event.target.classList.add("player-two");
+      tokenSpace[index - 7].classList.add("allowed");
+      event.target.classList.remove("allowed");
+      currentPlayer = 1;
+    }
   } else {
-    alert("Not allowed");
+    alert("Token must be placed at the bottom of the grid!");
   }
 
   ; // event.target.classList.add("player-one");
