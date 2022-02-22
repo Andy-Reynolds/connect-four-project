@@ -1,3 +1,7 @@
+#header {
+  text-align: center;
+}
+
 .playing-grid {
   display: flex;
   flex-wrap: wrap;
@@ -21,4 +25,8 @@
 .playing-grid .player-two {
   background-color: blue;
   border-radius: 100%;
+}
+
+#current-player {
+  text-align: center;
 }

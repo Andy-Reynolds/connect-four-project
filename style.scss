@@ -1,4 +1,7 @@
 
+#header {
+  text-align: center;
+}
 
 .playing-grid {
   display: flex;
@@ -27,5 +30,9 @@
     border-radius: 100%
   }
 
+}
+
+#current-player {
+  text-align: center;
 }
 
