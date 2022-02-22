@@ -1,6 +1,7 @@
 
 // Variables
 const tokenSpace = document.getElementsByClassName("playing-grid__token-space");
+const whoIsCurrentPlayer = document.getElementById("current-player");
 
 let currentPlayer = 1;
 
@@ -12,11 +13,13 @@ const onGridSquareClick = (event, index) => {
       tokenSpace[index-7].classList.add("allowed");
       event.target.classList.remove("allowed");
       currentPlayer = 2;
+      whoIsCurrentPlayer.innerHTML = `Player ${currentPlayer}'s turn`;
     } else if (currentPlayer ==2) {
       event.target.classList.add("player-two");
       tokenSpace[index-7].classList.add("allowed");
       event.target.classList.remove("allowed");
       currentPlayer = 1;
+      whoIsCurrentPlayer.innerHTML = `Player ${currentPlayer}'s turn`;
     }
   } else {
     alert("Token must be placed at the bottom of the grid!");
