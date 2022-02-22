@@ -30,3 +30,11 @@
 #current-player {
   text-align: center;
 }
+
+.player-one-turn {
+  color: red;
+}
+
+.player-two-turn {
+  color: blue;
+}
