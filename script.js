@@ -31,7 +31,7 @@ const winningCombinationsArrays = [
   [36,37,38,39],
   [37,38,39,40],
   [38,39,40,41],
-]
+];
 
 // // Functions
 const onGridSquareClick = (event, index) => {
@@ -44,6 +44,7 @@ const onGridSquareClick = (event, index) => {
       whoIsCurrentPlayer.innerHTML = `Player ${currentPlayer}'s turn`;
       whoIsCurrentPlayer.classList.remove("player-one-turn");
       whoIsCurrentPlayer.classList.add("player-two-turn");
+      checkForWinner();
     } else if (currentPlayer ==2) {
       event.target.classList.add("player-two");
       tokenSpace[index-7].classList.add("allowed");
@@ -52,15 +53,17 @@ const onGridSquareClick = (event, index) => {
       whoIsCurrentPlayer.innerHTML = `Player ${currentPlayer}'s turn`;
       whoIsCurrentPlayer.classList.remove("player-two-turn");
       whoIsCurrentPlayer.classList.add("player-one-turn");
+      checkForWinner();
     }
   } else {
     alert("Token must be placed at the bottom of the grid!");
   };
-  
-  // event.target.classList.add("player-one");
-  // tokenSpace[index-7].classList.add("player-one");
-  // console.log(index);
-  // event.target.innerHTML = index;
+}
+
+const checkForWinner = () => {
+  for (let index = 0; index < winningCombinationsArrays.length; index++) {
+    // console.log(winningCombinationsArrays[index][0]);
+  }
 }
 
 

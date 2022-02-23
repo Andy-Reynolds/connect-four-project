@@ -17,6 +17,7 @@ var onGridSquareClick = function onGridSquareClick(event, index) {
       whoIsCurrentPlayer.innerHTML = "Player ".concat(currentPlayer, "'s turn");
       whoIsCurrentPlayer.classList.remove("player-one-turn");
       whoIsCurrentPlayer.classList.add("player-two-turn");
+      checkForWinner();
     } else if (currentPlayer == 2) {
       event.target.classList.add("player-two");
       tokenSpace[index - 7].classList.add("allowed");
@@ -25,15 +26,18 @@ var onGridSquareClick = function onGridSquareClick(event, index) {
       whoIsCurrentPlayer.innerHTML = "Player ".concat(currentPlayer, "'s turn");
       whoIsCurrentPlayer.classList.remove("player-two-turn");
       whoIsCurrentPlayer.classList.add("player-one-turn");
+      checkForWinner();
     }
   } else {
     alert("Token must be placed at the bottom of the grid!");
   }
 
-  ; // event.target.classList.add("player-one");
-  // tokenSpace[index-7].classList.add("player-one");
-  // console.log(index);
-  // event.target.innerHTML = index;
+  ;
+};
+
+var checkForWinner = function checkForWinner() {
+  for (var index = 0; index < winningCombinationsArrays.length; index++) {// console.log(winningCombinationsArrays[index][0]);
+  }
 }; // Logic
 
 
