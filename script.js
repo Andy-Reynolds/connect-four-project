@@ -2,6 +2,7 @@
 // Variables
 const tokenSpace = document.getElementsByClassName("playing-grid__token-space");
 const whoIsCurrentPlayer = document.getElementById("current-player");
+const whoIsWinner = document.getElementById("winner");
 
 let currentPlayer = 1;
 
@@ -74,14 +75,16 @@ const checkForWinner = () => {
       tokenThree.classList.contains("player-one") && 
       tokenFour.classList.contains("player-one")
       ) {
-      console.log("Player one is the winner");
+      whoIsWinner.innerHTML = "Player One is the winner!";
+      whoIsWinner.classList.add("player-one-turn");
     } if (
       tokenOne.classList.contains("player-two") && 
       tokenTwo.classList.contains("player-two") && 
       tokenThree.classList.contains("player-two") && 
       tokenFour.classList.contains("player-two")
     ) {
-      console.log("Player two is the winner");
+      whoIsWinner.innerHTML = "Player Two is the winner!";
+      whoIsWinner.classList.add("player-two-turn");
     }
   }
 }

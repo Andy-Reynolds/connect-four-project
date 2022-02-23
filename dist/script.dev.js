@@ -3,6 +3,7 @@
 // Variables
 var tokenSpace = document.getElementsByClassName("playing-grid__token-space");
 var whoIsCurrentPlayer = document.getElementById("current-player");
+var whoIsWinner = document.getElementById("winner");
 var currentPlayer = 1;
 var winningCombinationsArrays = [// Horizontal
 [0, 1, 2, 3], [1, 2, 3, 4], [2, 3, 4, 5], [3, 4, 5, 6], [7, 8, 9, 10], [8, 9, 10, 11], [9, 10, 11, 12], [10, 11, 12, 13], [14, 15, 16, 17], [15, 16, 17, 18], [16, 17, 18, 19], [17, 18, 19, 20], [21, 22, 23, 24], [22, 23, 24, 25], [23, 24, 25, 26], [24, 25, 26, 27], [28, 29, 30, 31], [29, 30, 31, 32], [30, 31, 32, 33], [31, 32, 33, 34], [35, 36, 37, 38], [36, 37, 38, 39], [37, 38, 39, 40], [38, 39, 40, 41]]; // // Functions
@@ -44,11 +45,13 @@ var checkForWinner = function checkForWinner() {
     var tokenFour = tokenSpace[winningCombinationsArrays[index][3]];
 
     if (tokenOne.classList.contains("player-one") && tokenTwo.classList.contains("player-one") && tokenThree.classList.contains("player-one") && tokenFour.classList.contains("player-one")) {
-      console.log("Player one is the winner");
+      whoIsWinner.innerHTML = "Player One is the winner!";
+      whoIsWinner.classList.add("player-one-turn");
     }
 
     if (tokenOne.classList.contains("player-two") && tokenTwo.classList.contains("player-two") && tokenThree.classList.contains("player-two") && tokenFour.classList.contains("player-two")) {
-      console.log("Player two is the winner");
+      whoIsWinner.innerHTML = "Player Two is the winner!";
+      whoIsWinner.classList.add("player-two-turn");
     }
   }
 }; // Logic
