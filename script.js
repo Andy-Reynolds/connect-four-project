@@ -63,6 +63,26 @@ const onGridSquareClick = (event, index) => {
 const checkForWinner = () => {
   for (let index = 0; index < winningCombinationsArrays.length; index++) {
     // console.log(winningCombinationsArrays[index][0]);
+    let tokenOne = tokenSpace[winningCombinationsArrays[index][0]];
+    let tokenTwo = tokenSpace[winningCombinationsArrays[index][1]];
+    let tokenThree = tokenSpace[winningCombinationsArrays[index][2]];
+    let tokenFour = tokenSpace[winningCombinationsArrays[index][3]];
+
+    if (
+      tokenOne.classList.contains("player-one") && 
+      tokenTwo.classList.contains("player-one") && 
+      tokenThree.classList.contains("player-one") && 
+      tokenFour.classList.contains("player-one")
+      ) {
+      console.log("Player one is the winner");
+    } if (
+      tokenOne.classList.contains("player-two") && 
+      tokenTwo.classList.contains("player-two") && 
+      tokenThree.classList.contains("player-two") && 
+      tokenFour.classList.contains("player-two")
+    ) {
+      console.log("Player two is the winner");
+    }
   }
 }
 

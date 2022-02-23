@@ -36,7 +36,20 @@ var onGridSquareClick = function onGridSquareClick(event, index) {
 };
 
 var checkForWinner = function checkForWinner() {
-  for (var index = 0; index < winningCombinationsArrays.length; index++) {// console.log(winningCombinationsArrays[index][0]);
+  for (var index = 0; index < winningCombinationsArrays.length; index++) {
+    // console.log(winningCombinationsArrays[index][0]);
+    var tokenOne = tokenSpace[winningCombinationsArrays[index][0]];
+    var tokenTwo = tokenSpace[winningCombinationsArrays[index][1]];
+    var tokenThree = tokenSpace[winningCombinationsArrays[index][2]];
+    var tokenFour = tokenSpace[winningCombinationsArrays[index][3]];
+
+    if (tokenOne.classList.contains("player-one") && tokenTwo.classList.contains("player-one") && tokenThree.classList.contains("player-one") && tokenFour.classList.contains("player-one")) {
+      console.log("Player one is the winner");
+    }
+
+    if (tokenOne.classList.contains("player-two") && tokenTwo.classList.contains("player-two") && tokenThree.classList.contains("player-two") && tokenFour.classList.contains("player-two")) {
+      console.log("Player two is the winner");
+    }
   }
 }; // Logic
 
