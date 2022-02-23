@@ -123,6 +123,7 @@ const checkForWinner = () => {
       tokenThree.classList.contains("player-one") && 
       tokenFour.classList.contains("player-one")
       ) {
+      whoIsCurrentPlayer.innerHTML = "";  
       whoIsWinner.innerHTML = "Player One is the winner!";
       whoIsWinner.classList.add("player-one-turn");
     } if (
@@ -131,6 +132,7 @@ const checkForWinner = () => {
       tokenThree.classList.contains("player-two") && 
       tokenFour.classList.contains("player-two")
     ) {
+      whoIsCurrentPlayer.innerHTML = "";  
       whoIsWinner.innerHTML = "Player Two is the winner!";
       whoIsWinner.classList.add("player-two-turn");
     }

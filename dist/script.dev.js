@@ -48,11 +48,13 @@ var checkForWinner = function checkForWinner() {
     var tokenFour = tokenSpace[winningCombinationsArrays[index][3]];
 
     if (tokenOne.classList.contains("player-one") && tokenTwo.classList.contains("player-one") && tokenThree.classList.contains("player-one") && tokenFour.classList.contains("player-one")) {
+      whoIsCurrentPlayer.innerHTML = "";
       whoIsWinner.innerHTML = "Player One is the winner!";
       whoIsWinner.classList.add("player-one-turn");
     }
 
     if (tokenOne.classList.contains("player-two") && tokenTwo.classList.contains("player-two") && tokenThree.classList.contains("player-two") && tokenFour.classList.contains("player-two")) {
+      whoIsCurrentPlayer.innerHTML = "";
       whoIsWinner.innerHTML = "Player Two is the winner!";
       whoIsWinner.classList.add("player-two-turn");
     }
