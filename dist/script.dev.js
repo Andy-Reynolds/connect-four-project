@@ -67,7 +67,7 @@ var checkForWinner = function checkForWinner() {
 
 var _loop = function _loop(index) {
   tokenSpace[index].addEventListener("click", function () {
-    onGridSquareClick(event, index);
+    return onGridSquareClick(event, index);
   });
 };
 

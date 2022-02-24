@@ -71,7 +71,7 @@ const checkForWinner = () => {
 
 // Logic
 for (let index = 0; index < tokenSpace.length; index++) {
-  tokenSpace[index].addEventListener("click", function () {onGridSquareClick(event, index)});
+  tokenSpace[index].addEventListener("click", () => onGridSquareClick(event, index));
 }
 // IS THERE A WAY TO USE/REFERENCE THIS INDEX IN THE onGridSquareClick FUNCTION???
 
