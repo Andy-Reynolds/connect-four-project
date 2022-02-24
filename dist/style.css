@@ -21,8 +21,8 @@
   margin-top: 40px;
   width: 340px;
   height: calc(340px * 6/7);
-  border: 2px solid #003466;
-  background-color: #0173D3;
+  border: 2px solid #001D3D;
+  background-color: #438DD6;
   padding: 5px;
   margin-bottom: 30px;
   border-radius: 10px;
@@ -34,15 +34,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  border: solid 1px #003466;
+  background-color: #181F2A;
+  border: solid 1px #001D3D;
 }
 .playing-grid .player-one {
   background-color: #FE0000;
   border-radius: 100%;
 }
 .playing-grid .player-two {
-  background-color: #FFF205;
+  background-color: #FED700;
   border-radius: 100%;
 }
 
@@ -60,5 +60,5 @@
 }
 
 .player-two-turn {
-  color: #FFF205;
+  color: #FED700;
 }

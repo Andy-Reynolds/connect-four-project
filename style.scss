@@ -37,19 +37,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: $background;
     border: solid 1px $gameboardBorder;
   }  
 
   .player-one {
     background-color: $playerOne;
-    // border: solid 2px $gameboardBorder;
     border-radius: 100%
   }
   
   .player-two {
     background-color: $playerTwo;
-    // border: solid 2px $gameboardBorder;
     border-radius: 100%
   }
 
