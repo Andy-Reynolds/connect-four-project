@@ -2,6 +2,10 @@
 
 var _winningCombinations = require("/data/winning-combinations.js");
 
+var _confettiModule = _interopRequireDefault(require("/node_modules/canvas-confetti/dist/confetti.module.mjs"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 // Variables
 var tokenSpace = document.getElementsByClassName("playing-grid__token-space");
 var whoIsCurrentPlayer = document.getElementById("current-player");
@@ -48,12 +52,14 @@ var checkForWinner = function checkForWinner() {
       whoIsCurrentPlayer.innerHTML = "";
       whoIsWinner.innerHTML = "Player One is the winner!";
       whoIsWinner.classList.add("player-one-turn");
+      (0, _confettiModule["default"])();
     }
 
     if (tokenOne.classList.contains("player-two") && tokenTwo.classList.contains("player-two") && tokenThree.classList.contains("player-two") && tokenFour.classList.contains("player-two")) {
       whoIsCurrentPlayer.innerHTML = "";
       whoIsWinner.innerHTML = "Player Two is the winner!";
       whoIsWinner.classList.add("player-two-turn");
+      (0, _confettiModule["default"])();
     }
   }
 }; // Logic

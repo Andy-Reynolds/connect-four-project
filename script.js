@@ -1,4 +1,5 @@
 import { winningCombinationsArrays } from "/data/winning-combinations.js";
+import confetti from "/node_modules/canvas-confetti/dist/confetti.module.mjs";
 
 // Variables
 const tokenSpace = document.getElementsByClassName("playing-grid__token-space");
@@ -52,6 +53,7 @@ const checkForWinner = () => {
       whoIsCurrentPlayer.innerHTML = "";  
       whoIsWinner.innerHTML = "Player One is the winner!";
       whoIsWinner.classList.add("player-one-turn");
+      confetti();
     } if (
       tokenOne.classList.contains("player-two") && 
       tokenTwo.classList.contains("player-two") && 
@@ -61,6 +63,7 @@ const checkForWinner = () => {
       whoIsCurrentPlayer.innerHTML = "";  
       whoIsWinner.innerHTML = "Player Two is the winner!";
       whoIsWinner.classList.add("player-two-turn");
+      confetti();
     }
   }
 }
