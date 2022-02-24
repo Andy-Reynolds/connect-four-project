@@ -1,9 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&display=swap');
+@import "variables.scss";
 
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat Alternates', sans-serif;
+  background-color: $background;
+  // font-weight: bold;
+  // font-size: 1rem;
+}
 
 #header {
   text-align: center;
-  font-family: 'Montserrat Alternates', sans-serif;
+  margin-top: 40px;
+  color: white;
 }
 
 .playing-grid {
@@ -13,11 +22,13 @@
   align-content: space-around;
   margin-inline: auto;
   margin-top: 40px;
-  width: 360px;
-  height: calc(360px * 6/7);
-  border: 2px solid black;
-  background-color: grey;
-  padding: 2px;
+  width: 340px;
+  height: calc(340px * 6/7);
+  border: 2px solid $gameboardBorder;
+  background-color: $gameboard;
+  padding: 5px;
+  margin-bottom: 30px;
+  border-radius: 10px;
 
   &__token-space {
     border-radius: 100%;
@@ -27,15 +38,18 @@
     justify-content: center;
     align-items: center;
     background-color: white;
+    border: solid 1px $gameboardBorder;
   }  
 
   .player-one {
-    background-color: red;
+    background-color: $playerOne;
+    // border: solid 2px $gameboardBorder;
     border-radius: 100%
   }
-
+  
   .player-two {
-    background-color: blue;
+    background-color: $playerTwo;
+    // border: solid 2px $gameboardBorder;
     border-radius: 100%
   }
 
@@ -51,10 +65,10 @@
 }
 
 .player-one-turn {
-  color: red;
+  color: $playerOne;
 }
 
 .player-two-turn {
-  color: blue;
+  color: $playerTwo;
 }
 
