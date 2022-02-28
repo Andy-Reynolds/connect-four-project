@@ -54,20 +54,7 @@ var checkForWinner = function checkForWinner() {
 var onPlayAgainClick = function onPlayAgainClick(event) {
   removeAllowedSpaces();
   removePlayingTokens();
-
-  for (var index = 35; index < tokenSpace.length; index++) {
-    tokenSpace[index].classList.add("allowed");
-  }
-
-  ;
-  currentPlayer = 1;
-  whoIsWinner.classList.remove("player-one-turn");
-  whoIsWinner.classList.remove("player-two-turn");
-  whoIsWinner.innerHTML = "";
-  whoIsCurrentPlayer.innerHTML = "Player ".concat(currentPlayer, "'s turn");
-  whoIsCurrentPlayer.classList.remove("player-two-turn");
-  whoIsCurrentPlayer.classList.add("player-one-turn");
-  playAgainButton.style.display = "none";
+  resetClasses();
 };
 
 var addToken = function addToken(event, index) {
@@ -115,6 +102,22 @@ var removePlayingTokens = function removePlayingTokens(event) {
   }
 
   ;
+};
+
+var resetClasses = function resetClasses(event) {
+  for (var index = 35; index < tokenSpace.length; index++) {
+    tokenSpace[index].classList.add("allowed");
+  }
+
+  ;
+  currentPlayer = 1;
+  whoIsWinner.classList.remove("player-one-turn");
+  whoIsWinner.classList.remove("player-two-turn");
+  whoIsWinner.innerHTML = "";
+  whoIsCurrentPlayer.innerHTML = "Player ".concat(currentPlayer, "'s turn");
+  whoIsCurrentPlayer.classList.remove("player-two-turn");
+  whoIsCurrentPlayer.classList.add("player-one-turn");
+  playAgainButton.style.display = "none";
 }; // Logic
 
 

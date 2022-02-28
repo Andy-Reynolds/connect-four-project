@@ -60,19 +60,7 @@ const checkForWinner = () => {
 const onPlayAgainClick = (event) => {
   removeAllowedSpaces();
   removePlayingTokens();
-
-  for (let index = 35; index < tokenSpace.length; index++) {
-    tokenSpace[index].classList.add("allowed");
-  };
-
-  currentPlayer = 1;
-  whoIsWinner.classList.remove("player-one-turn");
-  whoIsWinner.classList.remove("player-two-turn");
-  whoIsWinner.innerHTML = "";
-  whoIsCurrentPlayer.innerHTML = `Player ${currentPlayer}'s turn`;
-  whoIsCurrentPlayer.classList.remove("player-two-turn");
-  whoIsCurrentPlayer.classList.add("player-one-turn");
-  playAgainButton.style.display = "none";
+  resetClasses();
 
 };
 
@@ -115,6 +103,20 @@ const removePlayingTokens = (event) => {
   };
 };
 
+const resetClasses = (event) => {
+  for (let index = 35; index < tokenSpace.length; index++) {
+    tokenSpace[index].classList.add("allowed");
+  };
+
+  currentPlayer = 1;
+  whoIsWinner.classList.remove("player-one-turn");
+  whoIsWinner.classList.remove("player-two-turn");
+  whoIsWinner.innerHTML = "";
+  whoIsCurrentPlayer.innerHTML = `Player ${currentPlayer}'s turn`;
+  whoIsCurrentPlayer.classList.remove("player-two-turn");
+  whoIsCurrentPlayer.classList.add("player-one-turn");
+  playAgainButton.style.display = "none";
+};
 
 
 
