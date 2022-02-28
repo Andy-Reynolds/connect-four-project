@@ -10,7 +10,7 @@ const playAgainButton = document.getElementById("play-again-button");
 let currentPlayer = 1;
 
 
-// // Functions
+// // Click Functions
 const onGridSquareClick = (event, index) => {
   if (event.target.classList.contains("allowed")) {
     addToken(event, index);
@@ -64,17 +64,29 @@ const onPlayAgainClick = (event) => {
 
 };
 
+
+// Reusable fucntions
 const addToken = (event, index) => {
-  if (currentPlayer == 1) {
-    event.target.classList.add("player-one");
-    tokenSpace[index-7].classList.add("allowed");
-    event.target.classList.remove("allowed");
-  } else if (currentPlayer ==2) {
-    event.target.classList.add("player-two");
-    tokenSpace[index-7].classList.add("allowed");
-    event.target.classList.remove("allowed");
-  };
-}
+  if (index >= 7) {
+    if (currentPlayer == 1) {
+      event.target.classList.add("player-one");
+      tokenSpace[index-7].classList.add("allowed");
+      event.target.classList.remove("allowed");
+    } else if (currentPlayer ==2) {
+      event.target.classList.add("player-two");
+      tokenSpace[index-7].classList.add("allowed");
+      event.target.classList.remove("allowed");
+    };
+  } else if (index < 7) {
+    if (currentPlayer == 1) {
+      event.target.classList.add("player-one");
+      event.target.classList.remove("allowed");
+    } else if (currentPlayer ==2) {
+      event.target.classList.add("player-two");
+      event.target.classList.remove("allowed");
+    };
+  }; 
+};
 
 const changePlayer = (event) => {
   if (currentPlayer == 1) {

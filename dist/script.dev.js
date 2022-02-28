@@ -11,7 +11,7 @@ var tokenSpace = document.getElementsByClassName("playing-grid__token-space");
 var whoIsCurrentPlayer = document.getElementById("current-player");
 var whoIsWinner = document.getElementById("winner");
 var playAgainButton = document.getElementById("play-again-button");
-var currentPlayer = 1; // // Functions
+var currentPlayer = 1; // // Click Functions
 
 var onGridSquareClick = function onGridSquareClick(event, index) {
   if (event.target.classList.contains("allowed")) {
@@ -55,17 +55,32 @@ var onPlayAgainClick = function onPlayAgainClick(event) {
   removeAllowedSpaces();
   removePlayingTokens();
   resetClasses();
-};
+}; // Reusable fucntions
+
 
 var addToken = function addToken(event, index) {
-  if (currentPlayer == 1) {
-    event.target.classList.add("player-one");
-    tokenSpace[index - 7].classList.add("allowed");
-    event.target.classList.remove("allowed");
-  } else if (currentPlayer == 2) {
-    event.target.classList.add("player-two");
-    tokenSpace[index - 7].classList.add("allowed");
-    event.target.classList.remove("allowed");
+  if (index >= 7) {
+    if (currentPlayer == 1) {
+      event.target.classList.add("player-one");
+      tokenSpace[index - 7].classList.add("allowed");
+      event.target.classList.remove("allowed");
+    } else if (currentPlayer == 2) {
+      event.target.classList.add("player-two");
+      tokenSpace[index - 7].classList.add("allowed");
+      event.target.classList.remove("allowed");
+    }
+
+    ;
+  } else if (index < 7) {
+    if (currentPlayer == 1) {
+      event.target.classList.add("player-one");
+      event.target.classList.remove("allowed");
+    } else if (currentPlayer == 2) {
+      event.target.classList.add("player-two");
+      event.target.classList.remove("allowed");
+    }
+
+    ;
   }
 
   ;
