@@ -38,7 +38,8 @@ var checkForWinner = function checkForWinner() {
       whoIsWinner.innerHTML = "Player One is the winner!";
       whoIsWinner.classList.add("player-one-turn");
       removeAllowedSpaces();
-      playAgainButton.style.display = "inline"; // confetti();
+      playAgainButton.style.display = "inline";
+      (0, _confettiModule["default"])();
     }
 
     if (tokenOne.classList.contains("player-two") && tokenTwo.classList.contains("player-two") && tokenThree.classList.contains("player-two") && tokenFour.classList.contains("player-two")) {
@@ -46,7 +47,8 @@ var checkForWinner = function checkForWinner() {
       whoIsWinner.innerHTML = "Player Two is the winner!";
       whoIsWinner.classList.add("player-two-turn");
       removeAllowedSpaces();
-      playAgainButton.style.display = "inline"; // confetti();
+      playAgainButton.style.display = "inline";
+      (0, _confettiModule["default"])();
     }
   }
 };
