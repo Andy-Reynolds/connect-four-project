@@ -1,11 +1,8 @@
 "use strict";
 
-var _winningCombinations = require("/data/winning-combinations.js");
+var _winningCombinations = require("./data/winning-combinations.js");
 
-var _confettiModule = _interopRequireDefault(require("/node_modules/canvas-confetti/dist/confetti.module.mjs"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
+// import confetti from "/node_modules/canvas-confetti/dist/confetti.module.mjs";
 // Variables
 var tokenSpace = document.getElementsByClassName("playing-grid__token-space");
 var whoIsCurrentPlayer = document.getElementById("current-player");
@@ -38,8 +35,7 @@ var checkForWinner = function checkForWinner() {
       whoIsWinner.innerHTML = "Player One is the winner!";
       whoIsWinner.classList.add("player-one-turn");
       removeAllowedSpaces();
-      playAgainButton.style.display = "inline";
-      (0, _confettiModule["default"])();
+      playAgainButton.style.display = "inline"; // confetti();
     }
 
     if (tokenOne.classList.contains("player-two") && tokenTwo.classList.contains("player-two") && tokenThree.classList.contains("player-two") && tokenFour.classList.contains("player-two")) {
@@ -47,8 +43,7 @@ var checkForWinner = function checkForWinner() {
       whoIsWinner.innerHTML = "Player Two is the winner!";
       whoIsWinner.classList.add("player-two-turn");
       removeAllowedSpaces();
-      playAgainButton.style.display = "inline";
-      (0, _confettiModule["default"])();
+      playAgainButton.style.display = "inline"; // confetti();
     }
   }
 };
