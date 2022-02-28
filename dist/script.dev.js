@@ -19,19 +19,13 @@ var onGridSquareClick = function onGridSquareClick(event, index) {
       event.target.classList.add("player-one");
       tokenSpace[index - 7].classList.add("allowed");
       event.target.classList.remove("allowed");
-      currentPlayer = 2;
-      whoIsCurrentPlayer.innerHTML = "Player ".concat(currentPlayer, "'s turn");
-      whoIsCurrentPlayer.classList.remove("player-one-turn");
-      whoIsCurrentPlayer.classList.add("player-two-turn");
+      changePlayer();
       checkForWinner();
     } else if (currentPlayer == 2) {
       event.target.classList.add("player-two");
       tokenSpace[index - 7].classList.add("allowed");
       event.target.classList.remove("allowed");
-      currentPlayer = 1;
-      whoIsCurrentPlayer.innerHTML = "Player ".concat(currentPlayer, "'s turn");
-      whoIsCurrentPlayer.classList.remove("player-two-turn");
-      whoIsCurrentPlayer.classList.add("player-one-turn");
+      changePlayer();
       checkForWinner();
     }
   } else {
@@ -84,6 +78,22 @@ var onPlayAgainClick = function onPlayAgainClick(event) {
   whoIsCurrentPlayer.classList.remove("player-two-turn");
   whoIsCurrentPlayer.classList.add("player-one-turn");
   playAgainButton.style.display = "none";
+};
+
+var changePlayer = function changePlayer(event) {
+  if (currentPlayer == 1) {
+    currentPlayer = 2;
+    whoIsCurrentPlayer.innerHTML = "Player ".concat(currentPlayer, "'s turn");
+    whoIsCurrentPlayer.classList.remove("player-one-turn");
+    whoIsCurrentPlayer.classList.add("player-two-turn");
+  } else if (currentPlayer == 2) {
+    currentPlayer = 1;
+    whoIsCurrentPlayer.innerHTML = "Player ".concat(currentPlayer, "'s turn");
+    whoIsCurrentPlayer.classList.remove("player-two-turn");
+    whoIsCurrentPlayer.classList.add("player-one-turn");
+  }
+
+  ;
 };
 
 var removeAllowedSpaces = function removeAllowedSpaces(event) {
