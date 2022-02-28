@@ -42,6 +42,7 @@
   align-items: center;
   background-color: #181F2A;
   border: solid 1px #001D3D;
+  cursor: pointer;
 }
 .playing-grid .player-one {
   background-color: #FE0000;
@@ -74,5 +75,13 @@
   margin-top: 30px;
 }
 #button-container #play-again-button {
+  background-color: #438DD6;
+  border: none;
   color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
 }
