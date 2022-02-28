@@ -62,3 +62,11 @@
 .player-two-turn {
   color: #FED700;
 }
+
+#button-container {
+  text-align: center;
+  margin-top: 30px;
+}
+#button-container #play-again-button {
+  color: white;
+}

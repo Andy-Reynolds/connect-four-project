@@ -5,6 +5,7 @@ import confetti from "/node_modules/canvas-confetti/dist/confetti.module.mjs";
 const tokenSpace = document.getElementsByClassName("playing-grid__token-space");
 const whoIsCurrentPlayer = document.getElementById("current-player");
 const whoIsWinner = document.getElementById("winner");
+const playAgainButton = document.getElementById("play-again-button");
 
 let currentPlayer = 1;
 
@@ -53,7 +54,9 @@ const checkForWinner = () => {
       whoIsCurrentPlayer.innerHTML = "";  
       whoIsWinner.innerHTML = "Player One is the winner!";
       whoIsWinner.classList.add("player-one-turn");
-      confetti();
+      removeAllowedSpaces();
+      playAgainButton.style.display = "inline";
+      // confetti();
     } if (
       tokenOne.classList.contains("player-two") && 
       tokenTwo.classList.contains("player-two") && 
@@ -63,36 +66,51 @@ const checkForWinner = () => {
       whoIsCurrentPlayer.innerHTML = "";  
       whoIsWinner.innerHTML = "Player Two is the winner!";
       whoIsWinner.classList.add("player-two-turn");
-      confetti();
+      removeAllowedSpaces();
+      playAgainButton.style.display = "inline";
+      // confetti();
     }
   }
 }
+
+const onPlayAgainClick = (event) => {
+  removeAllowedSpaces();
+  removePlayingTokens();
+
+  for (let index = 35; index < tokenSpace.length; index++) {
+    tokenSpace[index].classList.add("allowed");
+  };
+
+  currentPlayer = 1;
+  whoIsWinner.classList.remove("player-one-turn");
+  whoIsWinner.classList.remove("player-two-turn");
+  whoIsWinner.innerHTML = "";
+  whoIsCurrentPlayer.innerHTML = `Player ${currentPlayer}'s turn`;
+  whoIsCurrentPlayer.classList.remove("player-two-turn");
+  whoIsCurrentPlayer.classList.add("player-one-turn");
+  playAgainButton.style.display = "none";
+
+};
+
+const removeAllowedSpaces = (event) => {
+  for (let index = 0; index < tokenSpace.length; index++) {
+    tokenSpace[index].classList.remove("allowed");
+  };
+};
+
+const removePlayingTokens = (event) => {
+  for (let index = 0; index < tokenSpace.length; index++) {
+    tokenSpace[index].classList.remove("player-one");
+    tokenSpace[index].classList.remove("player-two");
+  };
+};
+
+
 
 
 // Logic
 for (let index = 0; index < tokenSpace.length; index++) {
   tokenSpace[index].addEventListener("click", () => onGridSquareClick(event, index));
 }
-// IS THERE A WAY TO USE/REFERENCE THIS INDEX IN THE onGridSquareClick FUNCTION???
 
-// E.g.
-// for (let index = 0; index < tokenSpace.length; index++) {
-//   tokenSpace[index].onclick = (event) => {
-//     console.log("This function works");
-//     event.target.classList.add("player-one");
-//     console.log(index);
-//     event.target.innerHTML = index;
-//   };
-
-// };
-
-
-// Only grid squares with the class of 'allowed' are allowed to be clicked. Create an alert if not
-// After each allowed turn, the grid square is given class of player-one or player-two and the turn changes between player 1 and player 2
-// When an allowed grid square is clicked, the 'allowed' class is removed from that square and a new class of 'allowed' is added to the square above. Can do this by subtracting 7 from the index value of the square
-
-// Figure out how determine winner!
-
-// Create an array of winning combinations of spaces. This will be an array of arrays
-// After each turn a checkForWinner function is called
-// checkForWinner function will map through the arrays and if player-one or player-two class is in the token spaces of one of the winning arrays, then winner innerhtml is changed. Can also add confetti??
+playAgainButton.addEventListener("click", onPlayAgainClick);
