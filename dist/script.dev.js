@@ -15,19 +15,9 @@ var currentPlayer = 1; // // Functions
 
 var onGridSquareClick = function onGridSquareClick(event, index) {
   if (event.target.classList.contains("allowed")) {
-    if (currentPlayer == 1) {
-      event.target.classList.add("player-one");
-      tokenSpace[index - 7].classList.add("allowed");
-      event.target.classList.remove("allowed");
-      changePlayer();
-      checkForWinner();
-    } else if (currentPlayer == 2) {
-      event.target.classList.add("player-two");
-      tokenSpace[index - 7].classList.add("allowed");
-      event.target.classList.remove("allowed");
-      changePlayer();
-      checkForWinner();
-    }
+    addToken(event, index);
+    changePlayer();
+    checkForWinner();
   } else {
     alert("Token must be placed at the bottom of the grid!");
   }
@@ -78,6 +68,20 @@ var onPlayAgainClick = function onPlayAgainClick(event) {
   whoIsCurrentPlayer.classList.remove("player-two-turn");
   whoIsCurrentPlayer.classList.add("player-one-turn");
   playAgainButton.style.display = "none";
+};
+
+var addToken = function addToken(event, index) {
+  if (currentPlayer == 1) {
+    event.target.classList.add("player-one");
+    tokenSpace[index - 7].classList.add("allowed");
+    event.target.classList.remove("allowed");
+  } else if (currentPlayer == 2) {
+    event.target.classList.add("player-two");
+    tokenSpace[index - 7].classList.add("allowed");
+    event.target.classList.remove("allowed");
+  }
+
+  ;
 };
 
 var changePlayer = function changePlayer(event) {

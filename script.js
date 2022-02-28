@@ -13,19 +13,9 @@ let currentPlayer = 1;
 // // Functions
 const onGridSquareClick = (event, index) => {
   if (event.target.classList.contains("allowed")) {
-    if (currentPlayer == 1) {
-      event.target.classList.add("player-one");
-      tokenSpace[index-7].classList.add("allowed");
-      event.target.classList.remove("allowed");
-      changePlayer();
-      checkForWinner();
-    } else if (currentPlayer ==2) {
-      event.target.classList.add("player-two");
-      tokenSpace[index-7].classList.add("allowed");
-      event.target.classList.remove("allowed");
-      changePlayer();
-      checkForWinner();
-    }
+    addToken(event, index);
+    changePlayer();
+    checkForWinner();
   } else {
     alert("Token must be placed at the bottom of the grid!");
   };
@@ -85,6 +75,18 @@ const onPlayAgainClick = (event) => {
   playAgainButton.style.display = "none";
 
 };
+
+const addToken = (event, index) => {
+  if (currentPlayer == 1) {
+    event.target.classList.add("player-one");
+    tokenSpace[index-7].classList.add("allowed");
+    event.target.classList.remove("allowed");
+  } else if (currentPlayer ==2) {
+    event.target.classList.add("player-two");
+    tokenSpace[index-7].classList.add("allowed");
+    event.target.classList.remove("allowed");
+  };
+}
 
 const changePlayer = (event) => {
   if (currentPlayer == 1) {
