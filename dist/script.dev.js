@@ -24,7 +24,6 @@ var onGridSquareClick = function onGridSquareClick(event, index) {
 
 var checkForWinner = function checkForWinner() {
   for (var index = 0; index < _winningCombinations.winningCombinationsArrays.length; index++) {
-    // console.log(winningCombinationsArrays[index][0]);
     var tokenOne = tokenSpace[_winningCombinations.winningCombinationsArrays[index][0]];
     var tokenTwo = tokenSpace[_winningCombinations.winningCombinationsArrays[index][1]];
     var tokenThree = tokenSpace[_winningCombinations.winningCombinationsArrays[index][2]];

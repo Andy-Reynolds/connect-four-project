@@ -23,7 +23,6 @@ const onGridSquareClick = (event, index) => {
 
 const checkForWinner = () => {
   for (let index = 0; index < winningCombinationsArrays.length; index++) {
-    // console.log(winningCombinationsArrays[index][0]);
     let tokenOne = tokenSpace[winningCombinationsArrays[index][0]];
     let tokenTwo = tokenSpace[winningCombinationsArrays[index][1]];
     let tokenThree = tokenSpace[winningCombinationsArrays[index][2]];
