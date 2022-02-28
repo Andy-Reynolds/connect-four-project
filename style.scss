@@ -30,6 +30,11 @@
   margin-bottom: 30px;
   border-radius: 10px;
 
+  @media screen and (min-width: 768px) {
+    width: 680px;
+    height: calc(680px * 6/7);
+  }
+
   &__token-space {
     border-radius: 100%;
     width: calc(90% / 7);
